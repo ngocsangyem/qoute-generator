@@ -1,3 +1,131 @@
+@import './reset';
+
+html,
 body {
-	background-color: red;
+	font-family: 'Indie Flower', cursive;
+	font-weight: 400;
+	color: #333333;
+}
+
+body {
+	background-image: url('../img/bg.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #dddddd;
+
+	min-height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.qoute-container {
+	width: 100%;
+	max-width: 90%;
+
+	margin: 0 auto;
+	padding: 1.2rem 1.5rem;
+
+	border-radius: 4px;
+	background-color: rgba(255, 255, 255, 0.4);
+	box-shadow: 0 0.9px 1.5px rgba(0, 0, 0, 0.03),
+		0 3.1px 5.5px rgba(0, 0, 0, 0.08),
+		0 14px 25px rgba(0, 0, 0, 0.12);
+
+	text-align: center;
+
+	.qoute-text {
+		color: #000000;
+
+		svg {
+			width: 3rem;
+		}
+
+		span {
+			font-size: 2.5rem;
+			line-height: 1.3;
+
+			&.long-qoute {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.qoute-author {
+		font-size: 1.5rem;
+		font-style: italic;
+
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.button-container {
+		display: flex;
+		justify-content: space-between;
+
+		button {
+			// background-color: rgba(255, 255, 255, 0.8);
+			background-color: transparent;
+			border: none;
+			border-radius: 50%;
+			transition: all 0.3s ease-in-out;
+
+			height: 3rem;
+			width: 3rem;
+
+			cursor: pointer;
+			outline: none;
+
+			padding: 0.5rem;
+
+			svg {
+				width: 2rem;
+			}
+
+			&:hover {
+				box-shadow: 0 0.3px 0.4px rgba(0, 0, 0, 0.025),
+					0 0.9px 1.5px rgba(0, 0, 0, 0.05),
+					0 3.5px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			&:active {
+				transform: translateY(2px);
+			}
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		width: 80%;
+
+		.qoute-text {
+			font-size: 2.75rem;
+		}
+	}
+}
+
+.loader {
+	border: 16px solid #f3f3f3;
+	/* Light grey */
+	border-top: 16px solid #3498db;
+	/* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+[hidden] {
+	display: none;
 }
